@@ -1,0 +1,43 @@
+{% extends 'layout/base-navbar.html' %} {% block _links %}
+<link rel="stylesheet" href="/css/style-data-custom.css" />
+{% endblock %} {% block _content %}
+<form class="see" action="">
+    <div class="hero">
+        <h1>Data Mahasiswa</h1>
+        <div class="cta">
+            <a href="{{ url_for('mahasiswa') }}" class="btn btn-edit d-flex align-items-center">
+                <i class="fa-solid fa-arrow-left"></i>
+                <p class="mb-0">Kembali</p>
+            </a>
+        </div>
+    </div>
+    <div>
+        <h6 for="mahasiswa">Mahasiswa</h6>
+        <h5 for="mahasiswa">{{ dataStudent.name }}</h5>
+    </div>
+    <div>
+        <h6 for="mahasiswa">Email</h6>
+        <h5 for="mahasiswa">{{ dataStudent.email }}</h5>
+    </div>
+    <div>
+        <h6 for="mahasiswa">No. Telepon</h6>
+        <h5 for="mahasiswa">{{ dataStudent.phone }}</h5>
+    </div>
+    <div>
+        <h6 for="mahasiswa">Jurusan</h6>
+        <h5 for="mahasiswa">{{ dataStudent.major }}</h5>
+    </div>
+
+    <!-- <div class="cta">
+        <div class="btn add">
+            <i class="fa-solid fa-plus"></i>
+            <button type="submit">Tambah</button>
+        </div>
+        <div class="btn search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <button type="button">Cari</button>
+        </div>
+    </div> -->
+</form>
+
+{% endblock %}

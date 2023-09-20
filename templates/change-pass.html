@@ -1,0 +1,48 @@
+{% extends 'layout/base.html' %} {% block _links %}
+<link rel="stylesheet" href=" css/style-login-register.css" />
+{% endblock %} {% block _content %}
+<div class="main">
+    <div class="content-left">
+        <div class="logo">
+            <img src=" image/logo.png" alt="logo" width="30px" />
+            <h1 class="logo-title">Siakad</h1>
+        </div>
+        <div class="title">Sistem Informasi Akademik <strong> #1 Universitas Terbaik Sepanjang Masa</strong></div>
+        <img class="illustration" src=" image/image.png" alt="" />
+    </div>
+    <div class="content-right">
+        <div class="header">
+            <div class="title">
+                <h1>Ubah Password</h1>
+            </div>
+            <form action="" method="post">
+                <div class="input currentPass">
+                    <input type="password" name="currentPass" id="currentPass" required />
+                    <label for="currentPass">Password Lama</label>
+                </div>
+                <div class="input password">
+                    <input type="password" name="password" id="password" required />
+                    <label for="password">Password Baru</label>
+                    <i class="fa-regular fa-eye"></i>
+                    <i class="fa-regular fa-eye-slash"></i>
+                </div>
+                <div class="input validatePass">
+                    <input type="password" name="validatePass" id="validatePass" required />
+                    <label for="validatePass">Konfirmasi Password</label>
+                </div>
+                <div class="cta">
+                    <button type="submit">Change Password</button>
+                    <p><a href="{{ url_for('dashboard') }}">Cancel</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="footer">
+            <p>
+                Copyright @ 2023 <br />
+                Ivan Adiyatma All rights reserved
+            </p>
+        </div>
+    </div>
+</div>
+<script src=" js/show-hide-pass.js"></script>
+{% endblock %}

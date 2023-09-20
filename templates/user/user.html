@@ -1,0 +1,59 @@
+{% extends 'layout/base-navbar.html' %} {% block _links %}
+<link rel="stylesheet" href="css/style-data.css" />
+{% endblock %} {% block _content %}
+<form action="" method="post">
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+    <div class="alert alert-{{ category }} alert-dismissible fade show mt-3 d-flex justify-content-between align-items-center py-0 pe-0 ps-3" id="alert" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="position: relative; background-color: transparent; width: 30px"></button>
+    </div>
+    {% endfor %} {% endif %} {% endwith %}
+    <h1>Data Akun</h1>
+    <div class="input full-name">
+        <input type="text" name="full-name" id="full-name" required />
+        <label for="full-name">Nama Lengkap</label>
+    </div>
+    <div class="input username">
+        <input type="text" name="username" id="username" required />
+        <label for="username">Username</label>
+    </div>
+    <div class="input password">
+        <input type="password" name="password" id="password" required />
+        <label for="password">Password</label>
+    </div>
+    <div class="input password-confirm">
+        <input type="password" name="password-confirm" id="password-confirm" required />
+        <label for="password-confirm">Konfirmasi Password</label>
+    </div>
+    <button type="submit" class="btn edit">
+        <i class="fa-solid fa-plus"></i>
+        <p class="mb-0">Tambah</p>
+    </button>
+</form>
+<div class="table-data">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Nama Lengkap</th>
+                <th scope="col">Username</th>
+                <th scope="col">Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td scope="row">{{ loop.index }}</td>
+                <td>{{ user.full_name }}</td>
+                <td>{{ user.username }}</td>
+                <td>
+                    <a href="{{ url_for('userLihat', uid = user.id) }}" class="btn btn-secondary">Lihat</a>
+                    <a href="{{ url_for('userEdit', uid = user.id) }}" class="btn btn-primary">Edit</a>
+                    <a href="{{ url_for('userHapus', uid = user.id) }}" class="btn btn-danger">Hapus</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

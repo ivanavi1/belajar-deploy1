@@ -1,0 +1,96 @@
+.main-contain {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 2rem;
+}
+.main-contain form {
+    width: 30%;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+}
+
+.main-contain form .input {
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 10px 10px;
+    width: 100%;
+}
+
+.main-contain form .input input {
+    outline: none;
+    border: transparent;
+    width: 100%;
+    font-weight: 500;
+}
+
+.main-contain form .input label {
+    position: absolute;
+    left: 0;
+    padding: 0 10px;
+    transition: ease-in-out 400ms;
+    color: #888;
+}
+
+.main-contain form .input input:valid ~ label,
+.main-contain form .input input:focus ~ label {
+    transform: translateY(-48px);
+    font-size: 14px;
+    padding: 10px 0;
+    color: #333;
+    font-weight: 600;
+}
+
+.main-contain form .btn {
+    border-radius: 10px;
+    background-color: #00d2ff;
+    color: #fff;
+    padding: 10px 10px;
+    width: 100%;
+    font-weight: 500;
+    transition: ease-in-out 200ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.main-contain form .btn button {
+    outline: none;
+    border: transparent;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #fff;
+    font-weight: 500;
+    transition: ease-in-out 200ms;
+}
+
+.main-contain form .btn:hover {
+    background-color: #717ad6;
+    cursor: pointer;
+}
+
+.main-contain .table-data {
+    width: 70%;
+    height: 100%;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    overflow-y: scroll;
+}
+
+.main-contain .table-data::-webkit-scrollbar {
+    display: none;
+}
+
+/* .main-contain .table-data table thead tr th,
+.main-contain .table-data table tbody tr td {
+    border-radius: 1rem;
+} */
+
+.main-contain .table-data table thead {
+    position: sticky;
+    top: 0;
+}

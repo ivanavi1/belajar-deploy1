@@ -1,0 +1,112 @@
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    /* background: linear-gradient(43deg, #3c52bf, #aa44a3, #ffcc70); */
+    background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.main nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+}
+
+.main nav .logo {
+    display: flex;
+    align-items: start;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.main nav .logo .logo-title {
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.main nav .nav-items {
+    display: flex;
+    gap: 4rem;
+    position: relative;
+}
+
+.main nav .nav-items a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.main nav .nav-items .sub-navitems {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    background-color: #a2c92e;
+    opacity: 0;
+    position: absolute;
+    top: 30px;
+    right: -111px;
+}
+
+.main nav .nav-items .sub-navitems a {
+    padding: 16px;
+}
+
+.combobox:hover .main nav .nav-items .sub-navitems {
+    opacity: 1;
+}
+
+.main nav .profile {
+    text-decoration: none;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.main nav .profile p {
+    color: #fff;
+    align-self: center;
+    margin-bottom: 0;
+}
+
+.main nav .profile img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.main .main-content {
+    margin: 0 1rem 1rem;
+    padding: 2rem;
+    border-radius: 2rem;
+    height: 88%;
+    background-color: #fff;
+}
+
+.main .main-content .main-contain {
+    height: 100%;
+    overflow-y: scroll;
+    background-color: #fff;
+}
+
+.main .main-content .main-contain::-webkit-scrollbar {
+    display: none;
+}

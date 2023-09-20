@@ -1,0 +1,38 @@
+{% extends 'layout/base-navbar.html' %} {% block _links %}
+<link rel="stylesheet" href="css/style-jurusan.css" />
+{% endblock %} {% block _content %}
+<form action="" method="post">
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+    <div class="alert alert-{{ category }} alert-dismissible fade show mt-3 d-flex justify-content-between align-items-center py-0 pe-0 ps-3" id="alert" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="position: relative; background-color: transparent; width: 30px"></button>
+    </div>
+    {% endfor %} {% endif %} {% endwith %}
+    <h1>Jurusan</h1>
+    <div class="input jurusan">
+        <input type="text" name="jurusan" id="jurusan" required />
+        <label for="jurusan">Jurusan</label>
+    </div>
+    <button type="submit">+ Tambah</button>
+</form>
+<div class="table-data">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Nama Jurusan</th>
+                <th scope="col">Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for major in majors %}
+            <tr>
+                <td scope="row">{{ loop.index }}</td>
+                <td>{{ major.major }}</td>
+                <td><a href="{{ url_for('jurusanHapus', uid = major.major) }}" class="btn btn-danger">Hapus</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
